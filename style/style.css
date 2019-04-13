@@ -1,0 +1,42 @@
+body {
+  background: #000;
+}
+
+.container {
+  margin: 250px auto;
+  width: 650px;
+}
+.container__wrapper {
+  background: #fff;
+  display: flex;
+}
+.container__wrapper .item__btn {
+  height: 250px;
+  width: 71px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: #fff;
+  border: 1px solid gray;
+  outline: none;
+  margin-right: 0px;
+  margin-left: 9px;
+}
+.container__wrapper .item__btn-letter {
+  font-size: 25px;
+  font-family: "Indie Flower", cursive;
+  font-weight: 600;
+}
+.container__wrapper .item__btn.active {
+  background: #9EFF5E;
+  border: 2px solid lime;
+  box-shadow: 0px 0px 25px 5px rgba(158, 255, 94, 0.7);
+}
+.active {
+  background: #9EFF5E;
+  border:2px solid lime;
+  box-shadow: 0px 0px 25px 5px rgba(158,255,94,.7);
+}
+
+/*# sourceMappingURL=style.css.map */
