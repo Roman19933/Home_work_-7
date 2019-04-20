@@ -9,114 +9,46 @@ let audio_j = new Audio("audio/7.mp3");
 let audio_k = new Audio("audio/8.mp3");
 
 //keyboard down/up
-function piano (event){
-switch(event.keyCode) {
-		case 65:
-	audio_a.currentTime = 0;
-	audio_a.play();
- 	button[0].classList.add('active');
- 	break;
- 		case 83:
-	audio_s.currentTime = 0;
-	audio_s.play();
- 	button[1].classList.add('active')
- 	break;
- 		case 68:
-	audio_d.currentTime = 0;
-	audio_d.play();
- 	button[2].classList.add('active')
- 	break;
- 		case 70:
-	audio_f.currentTime = 0;
-	audio_f.play();
- 	button[3].classList.add('active')
- 	break;
- 		case 71:
-	audio_g.currentTime = 0;
-	audio_g.play();
- 	button[4].classList.add('active')
- 	break;
- 		case 72:
-	audio_h.currentTime = 0;
-	audio_h.play();
- 	button[5].classList.add('active')
- 	break;
- 		case 74:
-	audio_j.currentTime = 0;
-	audio_j.play();
- 	button[6].classList.add('active')
- 	break;
- 		case 75:
-	audio_k.currentTime = 0;
-	audio_k.play();
- 	button[7].classList.add('active')
- 	break;
-}
-};
-document.addEventListener('keydown',piano);
-document.addEventListener('keyup', function(){
-button[0].classList.remove('active');
-button[1].classList.remove('active');
-button[2].classList.remove('active');
-button[3].classList.remove('active');
-button[4].classList.remove('active');
-button[5].classList.remove('active');
-button[6].classList.remove('active');
-button[7].classList.remove('active');
-});
+function pianino (code,btn,audio) {
+	document.addEventListener('keydown', function(event){
+		if (event.keyCode == code) {
+			audio.currentTime = 0;
+			audio.play();
+ 			btn.classList.add('active');
+		} 
 
+	});
+	document.addEventListener('keyup', function(event){
+		btn.classList.remove('active');
+	})
+}
+pianino(65,button[0],audio_a);
+pianino(83,button[1],audio_s);
+pianino(68,button[2],audio_d);
+pianino(70,button[3],audio_f);
+pianino(71,button[4],audio_g);
+pianino(72,button[5],audio_h);
+pianino(74,button[6],audio_j);
+pianino(75,button[7],audio_k);
 
 
 
 //Mouse down/up
-button[0].addEventListener('mousedown',function(){
-	audio_a.currentTime = 0;
-	audio_a.play();
-	this.classList.add("active");
-});
-button[1].addEventListener('mousedown',function(){
-	audio_s.currentTime = 0;
-	audio_s.play();
-	this.classList.add("active");
-});
-button[2].addEventListener('mousedown',function(){
-	audio_d.currentTime = 0;
-	audio_d.play();
-	this.classList.add("active");
-});
-button[3].addEventListener('mousedown',function(){
-	audio_f.currentTime = 0;
-	audio_f.play();
-	this.classList.add("active");
-});
-button[4].addEventListener('mousedown',function(){
-	audio_g.currentTime = 0;
-	audio_g.play();
-	this.classList.add("active");
-});
-button[5].addEventListener('mousedown',function(){
-	audio_h.currentTime = 0;
-	audio_h.play();
-	this.classList.add("active");
-});
-button[6].addEventListener('mousedown',function(){
-	audio_j.currentTime = 0;
-	audio_j.play();
-	this.classList.add("active");
-});
-button[7].addEventListener('mousedown',function(){
-	audio_k.currentTime = 0;
-	audio_k.play();
-	this.classList.add("active");
-});
-
-document.addEventListener('mouseup',function(){
-button[0].classList.remove('active');
-button[1].classList.remove('active');
-button[2].classList.remove('active');
-button[3].classList.remove('active');
-button[4].classList.remove('active');
-button[5].classList.remove('active');
-button[6].classList.remove('active');
-button[7].classList.remove('active');
-});
+function mouse(btn,audio) {
+	btn.addEventListener('mousedown', function(){
+		audio.currentTime = 0;
+		audio.play();
+		this.classList.add("active");
+	});
+	btn.addEventListener('mouseup', function(){
+		this.classList.remove("active");
+	});
+}
+mouse(button[0],audio_a);
+mouse(button[1],audio_s);
+mouse(button[2],audio_d);
+mouse(button[3],audio_f);
+mouse(button[4],audio_g);
+mouse(button[5],audio_h);
+mouse(button[6],audio_j);
+mouse(button[7],audio_k);
